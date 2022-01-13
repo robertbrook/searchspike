@@ -2,4 +2,4 @@
 
 echo "hello wolrd";
 
-echo getenv("APIKEY");
+// getenv("APIKEY");
