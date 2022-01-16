@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php $q = htmlspecialchars($_GET['q']); ?><!DOCTYPE html>
 <html lang="en-GB">
 <head>
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
  <body>
   <header>
 <form action="index.php" method="GET">
- <input type="search" name="q">
+ <input type="search" name="q" value="<?php echo $q; ?>">
     <input type="submit">
 </form>
 </header>
