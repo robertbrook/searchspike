@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <style>
         main {padding:2rem 0;}
-        article {display:block;padding:1rem 0;}
+        article {display:block;padding:0.5rem 0;}
         span.displayUrl {display:block;color:green;}
     </style>
  </head>
