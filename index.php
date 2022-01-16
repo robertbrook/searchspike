@@ -1,8 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+ </head>
+ <body>
+  <header>
 <form action="index.php" method="GET">
  <input type="search" name="q">
     <input type="submit">
 </form>
-<hr>
+</header>
+  <main>
 <?php 
 
 $apikey = getenv("APIKEY");
@@ -29,3 +39,9 @@ $obj = json_decode($json);
 print_r($obj);
 
 }
+   
+   ?>
+  </main>
+  <footer></footer>
+ </body>
+</html>
