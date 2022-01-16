@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <style>
-        main {padding:2rem auto;}
+        main {padding:2rem 0;}
     </style>
  </head>
  <body>
