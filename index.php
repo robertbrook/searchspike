@@ -7,6 +7,7 @@
     <style>
         main {padding:2rem 0;}
         article {display:block;padding:1rem 0;}
+        span.displayUrl {display:block;color:green;}
     </style>
  </head>
  <body>
@@ -43,25 +44,11 @@ $obj = json_decode($json);
 
     
 foreach ($obj->webPages->value as $value) {
-    // print_r($value);
-    
-/*
-  [id] => https://api.cognitive.microsoft.com/api/v7/#WebPages.41
-    [name] => Armed Forces Bill (Division 1: held on Wednesday 8 Dec ...
-    [url] => https://hansard.parliament.uk/Lords/2021-12-08/division/0DE8BCEC-0317-4972-AD3B-CD42E7456A5C/ArmedForcesBill?outputType=Names
-    [isFamilyFriendly] => 1
-    [displayUrl] => https://hansard.<b>parliament.uk</b>/Lords/2021-12-08/division/0DE8BCEC-0317-4972-AD3B-CD42E...
-    [snippet] => Division 1: held on Wednesday 8 December 2021. Download CSV file View within context of debate. This page shows the Hansard record for the division. You can also view the division on the Votes in<b> Parliament website.</b>
-    [dateLastCrawled] => 2022-01-12T00:43:00.0000000Z
-    [language] => en
-    [isNavigational] => 
-*/
+
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$value->name</a></big>
-<br>
-$value->displayUrl
-<br>
+<span class="displayUrl">$value->displayUrl</span>
 $value->snippet
 </article>
 ARTICLE;
