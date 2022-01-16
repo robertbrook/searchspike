@@ -11,8 +11,9 @@ $q = htmlspecialchars($_GET['q']);
 
 
 if (empty($q)) {
-    echo '$var is either 0, empty, or not set at all';
-}
+    echo '<!-- no q -->';
+} else {
+ 
 
 $opts = [
     "http" => [
@@ -27,3 +28,4 @@ $json = file_get_contents("https://api.cognitive.microsoft.com/bing/v7.0/search?
 $obj = json_decode($json);
 print_r($obj);
 
+}
