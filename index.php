@@ -57,7 +57,7 @@ foreach ($obj->webPages->value as $value) {
     [isNavigational] => 
 */
 echo <<<ARTICLE
-<article id="$value->snippet">
+<article id="$value->id">
 <big><a href="$value->url">$value->name</a></big>
 <br>
 $value->displayUrl
