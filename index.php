@@ -50,7 +50,7 @@ foreach ($obj->webPages->value as $value) {
     
 $tags = get_meta_tags($value->url);
     
-    print_r($tags);
+echo($tags);
 
 echo <<<ARTICLE
 <article id="$value->id">
