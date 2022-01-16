@@ -1,5 +1,6 @@
 <?php 
 
-echo "hello wolrd";
+
+echo phpinfo();
 
 // getenv("APIKEY");
