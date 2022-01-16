@@ -13,7 +13,7 @@ $opts = [
 
 $context = stream_context_create($opts);
 
-$json = file_get_contents('https://api.cognitive.microsoft.com/bing/v7.0/search?q=${q}+site:parliament.uk&count=50&textDecorations=true&textFormat=HTML', false, $context);
+$json = file_get_contents("https://api.cognitive.microsoft.com/bing/v7.0/search?q=${q}+site:parliament.uk&count=50&textDecorations=true&textFormat=HTML", false, $context);
 $obj = json_decode($json);
 print_r($obj);
 
