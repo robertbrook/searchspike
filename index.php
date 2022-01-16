@@ -1,8 +1,13 @@
+<form action="index.php" method="GET">
+ <input type="search" name="q">
+    <input type="submit">
+</form>
+<hr>
 <?php 
 
 $apikey = getenv("APIKEY");
 
-$q = "woking";
+$q = htmlspecialchars($_GET['q']);
 
 $opts = [
     "http" => [
