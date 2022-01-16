@@ -43,6 +43,13 @@ $obj = json_decode($json);
     
 foreach ($obj->webPages->value as $value) {
     print_r($value);
+    
+echo <<<ARTICLE
+<article>
+$value->snippet
+</article>
+ARTICLE;
+    
 }
 
 }
