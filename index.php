@@ -9,6 +9,11 @@ $apikey = getenv("APIKEY");
 
 $q = htmlspecialchars($_GET['q']);
 
+
+if (empty($q)) {
+    echo '$var is either 0, empty, or not set at all';
+}
+
 $opts = [
     "http" => [
         "method" => "GET",
