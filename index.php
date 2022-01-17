@@ -64,6 +64,7 @@ $tags = get_meta_tags($value->url);
 
 $article_host = parse_url($value->url, PHP_URL_HOST);
 
+$article_snippet = "";
 $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:description']; }
