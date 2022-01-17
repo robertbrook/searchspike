@@ -99,7 +99,6 @@ $article_snippet
     $article_author
     $article_topic 
     $article_section
-    $twitter_site
 </span>
 </article>
 ARTICLE;
