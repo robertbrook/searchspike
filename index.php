@@ -56,7 +56,8 @@ preg_match("/https:\/\/petition.parliament.uk\/petitions\/\d*$/", $value->url, $
 if (count($petition_match) == 1) {
     $petition_json = file_get_contents($value->url . ".json");
     $petition_obj = json_decode($petition_json);
-    print_r($petition_obj->data->attributes);
+    $petition_attrs = $petition_obj->data->attributes;
+    print_r($petition_attrs);
 }
     
 $tags = get_meta_tags($value->url);
@@ -70,6 +71,7 @@ if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:des
 $article_title = $value->name;
 if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; }
 if (isset($tags['twitter:title'])) { $article_title = $tags['twitter:title']; }
+if (isset($petition_attrs->action)) { $article_title = "Petition: " . $petition_attrs->action; }
 
 $article_author = "";
 if (
