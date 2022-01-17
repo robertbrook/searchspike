@@ -8,6 +8,7 @@
         main {padding:2rem 0;}
         article {display:block;padding:0.75rem 0;}
         span.displayUrl {display:block;color:green;}
+        span.info {display:block;color:gray;}
     </style>
  </head>
  <body>
@@ -58,11 +59,14 @@ if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 $article_title = $value->name;
 if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; }
 
+if (isset($tags['citation_author'])) { $article_author = "Author: " . $tags['citation_author']; }
+
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
 <span class="displayUrl">$value->displayUrl</span>
 $article_snippet
+<span class="info">$article_author</span>
 </article>
 ARTICLE;
     
