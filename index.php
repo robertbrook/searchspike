@@ -71,7 +71,7 @@ if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:des
 $article_title = $value->name;
 if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; }
 if (isset($tags['twitter:title'])) { $article_title = $tags['twitter:title']; }
-if (isset($petition_attrs->action)) { $article_title = "<q>" . $petition_attrs->action . "</q>"; }
+if (isset($petition_attrs->action)) { $article_title = '&ldquo;' . $petition_attrs->action . '&rdquo;'; }
 
 $article_author = "";
 if (
