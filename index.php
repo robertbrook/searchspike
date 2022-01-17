@@ -51,9 +51,9 @@ $obj = json_decode($json);
     
 foreach ($obj->webPages->value as $value) {
 
-preg_match("/https:\/\/petition.parliament.uk\/petitions\/\d*$/", $value->url, $m);
+preg_match("/https:\/\/petition.parliament.uk\/petitions\/\d*$/", $value->url, $petition_match);
 
-print_r(count($m) == 2);
+print_r(count($petition_match));
     
 $tags = get_meta_tags($value->url);
 
