@@ -51,11 +51,14 @@ foreach ($obj->webPages->value as $value) {
 $tags = get_meta_tags($value->url);
     
 print_r($tags);
-    if (isset($tags['description'])) { echo "<h3>{$tags['description']}</h3>"; }
+
+$article_title = $value->name;
+
+    if (isset($tags['description'])) { $article_title = $tags['description']; }
 
 echo <<<ARTICLE
 <article id="$value->id">
-<big><a href="$value->url">$value->name</a></big>
+<big><a href="$value->url">$article_title</a></big>
 <span class="displayUrl">$value->displayUrl</span>
 $value->snippet
 </article>
