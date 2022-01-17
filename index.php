@@ -61,7 +61,7 @@ if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; 
 
 if (
     isset($tags['citation_author']) === true && $tags['citation_author'] !== ''
-    ) { $article_author = "Author <strong>" . $tags['citation_author'] . "</strong>"; }
+    ) { $article_author = "Author <b>" . $tags['citation_author'] . "</b>"; }
 
 echo <<<ARTICLE
 <article id="$value->id">
