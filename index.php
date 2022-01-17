@@ -54,8 +54,8 @@ $tags = get_meta_tags($value->url);
 print_r($tags);
 
 $article_snippet = $value->snippet;
-if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:description']; }
+if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 
 $article_title = $value->name;
 if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; }
