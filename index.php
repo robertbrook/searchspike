@@ -67,6 +67,12 @@ $tags = get_meta_tags($value->url);
 
 $article_host = parse_url($value->url, PHP_URL_HOST);
 
+$article_host_badge = "";
+$article_host_badge = match ($article_host) {
+    'petition.parliament.uk' => "Petitions",
+    default => $article_host,
+};
+
 $article_snippet = "";
 $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
@@ -108,7 +114,7 @@ if (
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
-<span class="host">$article_host</span>
+<span class="host">$article_host $article_host_badge</span>
 <span class="displayUrl">$value->displayUrl</span>
 $article_snippet
 <span class="info">
