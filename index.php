@@ -64,12 +64,17 @@ if (
     isset($tags['citation_author']) === true && $tags['citation_author'] !== ''
     ) { $article_author = "Author <b>" . $tags['citation_author'] . "</b>"; }
 
+$article_topic = "";
+if (
+    isset($tags['citation_topic']) === true && $tags['citation_topic'] !== ''
+    ) { $article_topic = "&middot; Topic <b>" . $tags['citation_topic'] . "</b>"; }
+
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
 <span class="displayUrl">$value->displayUrl</span>
 $article_snippet
-<span class="info">$article_author</span>
+<span class="info">$article_author $article_topic</span>
 </article>
 ARTICLE;
     
