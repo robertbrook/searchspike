@@ -71,17 +71,17 @@ if (
 $article_topic = "";
 if (
     isset($tags['citation_topic']) === true && $tags['citation_topic'] !== ''
-    ) { $article_topic = " Topic <b>" . $tags['citation_topic'] . "</b>"; }
+    ) { $article_topic = "&nbsp;&nbsp; Topic <b>" . $tags['citation_topic'] . "</b>"; }
 
 $article_section = "";
 if (
     isset($tags['citation_section']) === true && $tags['citation_section'] !== ''
-    ) { $article_section = " Section <b>" . $tags['citation_section'] . "</b>"; }
+    ) { $article_section = "&nbsp;&nbsp; Section <b>" . $tags['citation_section'] . "</b>"; }
 
 $twitter_site = "";
 if (
     isset($tags['twitter:site']) === true && $tags['twitter:site'] !== ''
-    ) { $twitter_site = " Twitter <b>" . $tags['twitter:site'] . "</b>"; }
+    ) { $twitter_site = "&nbsp;&nbsp; Twitter <b>" . $tags['twitter:site'] . "</b>"; }
 
 echo <<<ARTICLE
 <article id="$value->id">
