@@ -9,6 +9,7 @@
         article {display:block;padding:0.75rem 0;}
         span.displayUrl {display:block;color:green;}
         span.info {display:block;color:gray;}
+        span.tag {padding-right:1rem;}
     </style>
  </head>
  <body>
@@ -69,24 +70,28 @@ if (
 $article_topic = "";
 if (
     isset($tags['citation_topic']) === true && $tags['citation_topic'] !== ''
-    ) { $article_topic = "&nbsp;&nbsp; Topic <b>" . $tags['citation_topic'] . "</b>"; }
+    ) { $article_topic = "Topic <b>" . $tags['citation_topic'] . "</b>"; }
 
 $article_section = "";
 if (
     isset($tags['citation_section']) === true && $tags['citation_section'] !== ''
-    ) { $article_section = "&nbsp;&nbsp; Section <b>" . $tags['citation_section'] . "</b>"; }
+    ) { $article_section = "Section <b>" . $tags['citation_section'] . "</b>"; }
 
 $twitter_site = "";
 if (
     isset($tags['twitter:site']) === true && $tags['twitter:site'] !== ''
-    ) { $twitter_site = "&nbsp;&nbsp; Twitter <b>" . $tags['twitter:site'] . "</b>"; }
+    ) { $twitter_site = "Twitter <b>" . $tags['twitter:site'] . "</b>"; }
 
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
 <span class="displayUrl">$value->displayUrl</span>
 $article_snippet
-<span class="info">$article_author $article_topic $article_section $twitter_site</span>
+<span class="info">
+    <span class="tag">$article_author</span>
+    <span class="tag">$article_topic</span> 
+    <span class="tag">$article_section</span> 
+    <span class="tag">$twitter_site</span>
 </article>
 ARTICLE;
     
