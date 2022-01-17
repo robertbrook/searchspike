@@ -100,6 +100,11 @@ if (
     isset($tags['twitter:site']) === true && $tags['twitter:site'] !== ''
     ) { $twitter_site = "<span class='tag'>Twitter <b>" . $tags['twitter:site'] . "</b></span>"; }
 
+$petition_state = "";
+if (
+    isset($petition_attrs->state) === true && $petition_attrs->state !== ''
+    ) { $twitter_site = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
+    
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
@@ -110,6 +115,7 @@ $article_snippet
     $article_author
     $article_topic 
     $article_section
+    $petition_state
 </span>
 </article>
 ARTICLE;
