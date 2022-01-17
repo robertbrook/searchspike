@@ -10,6 +10,7 @@
         span.displayUrl {display:block;color:green;}
         span.host {display:block;color:gray;}
         span.info {display:block;color:gray;}
+        span.inline-info {color:gray;}
         span.tag {padding-right:1rem;}
     </style>
  </head>
@@ -70,7 +71,7 @@ $article_snippet = "";
 $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:description']; }
-if (isset($petition_attrs->background)) { $article_snippet = 'Background: ' . $petition_attrs->background; }
+if (isset($petition_attrs->background)) { $article_snippet = "<span class='inline-info'>Background</span> " . $petition_attrs->background; }
 
 $article_title = "";
 $article_title = $value->name;
