@@ -65,22 +65,22 @@ if (isset($tags['twitter:title'])) { $article_title = $tags['twitter:title']; }
 $article_author = "";
 if (
     isset($tags['citation_author']) === true && $tags['citation_author'] !== ''
-    ) { $article_author = "Author <b>" . $tags['citation_author'] . "</b>"; }
+    ) { $article_author = "<span class='tag'>Author <b>" . $tags['citation_author'] . "</b></span>"; }
 
 $article_topic = "";
 if (
     isset($tags['citation_topic']) === true && $tags['citation_topic'] !== ''
-    ) { $article_topic = "Topic <b>" . $tags['citation_topic'] . "</b>"; }
+    ) { $article_topic = "<span class='tag'>Topic <b>" . $tags['citation_topic'] . "</b></span>"; }
 
 $article_section = "";
 if (
     isset($tags['citation_section']) === true && $tags['citation_section'] !== ''
-    ) { $article_section = "Section <b>" . $tags['citation_section'] . "</b>"; }
+    ) { $article_section = "<span class='tag'>Section <b>" . $tags['citation_section'] . "</b></span>"; }
 
 $twitter_site = "";
 if (
     isset($tags['twitter:site']) === true && $tags['twitter:site'] !== ''
-    ) { $twitter_site = "Twitter <b>" . $tags['twitter:site'] . "</b>"; }
+    ) { $twitter_site = "<span class='tag'>Twitter <b>" . $tags['twitter:site'] . "</b></span>"; }
 
 echo <<<ARTICLE
 <article id="$value->id">
@@ -88,10 +88,11 @@ echo <<<ARTICLE
 <span class="displayUrl">$value->displayUrl</span>
 $article_snippet
 <span class="info">
-    <span class="tag">$article_author</span>
-    <span class="tag">$article_topic</span> 
-    <span class="tag">$article_section</span> 
-    <span class="tag">$twitter_site</span>
+    $article_author
+    $article_topic 
+    $article_section
+    $twitter_site
+</span>
 </article>
 ARTICLE;
     
