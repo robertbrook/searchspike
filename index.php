@@ -51,7 +51,7 @@ foreach ($obj->webPages->value as $value) {
     
 $tags = get_meta_tags($value->url);
     
-print_r($tags);
+// print_r($tags);
 
 $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
