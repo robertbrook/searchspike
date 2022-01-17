@@ -50,6 +50,11 @@ $obj = json_decode($json);
     // str_ends_with
     
 foreach ($obj->webPages->value as $value) {
+
+$pattern = "https://petition.parliament.uk/petitions/(\d*)";
+preg_match($pattern, $value->url, $m); 
+
+print_r($m);
     
 $tags = get_meta_tags($value->url);
 
