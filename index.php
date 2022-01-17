@@ -52,15 +52,15 @@ $tags = get_meta_tags($value->url);
     
 print_r($tags);
 
-$article_title = $value->name;
+$article_snippet = $value->snippet;
 
-    if (isset($tags['description'])) { $article_title = $tags['description']; }
+    if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 
 echo <<<ARTICLE
 <article id="$value->id">
-<big><a href="$value->url">$article_title</a></big>
+<big><a href="$value->url">$value->name</a></big>
 <span class="displayUrl">$value->displayUrl</span>
-$value->snippet
+$article_snippet
 </article>
 ARTICLE;
     
