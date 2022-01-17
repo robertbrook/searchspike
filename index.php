@@ -55,9 +55,11 @@ print_r($tags);
 
 $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
+if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:description']; }
 
 $article_title = $value->name;
 if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; }
+if (isset($tags['twitter:title'])) { $article_title = $tags['twitter:title']; }
 
 $article_author = "";
 if (
@@ -73,7 +75,7 @@ $article_section = "";
 if (
     isset($tags['citation_section']) === true && $tags['citation_section'] !== ''
     ) { $article_section = "&middot; Section <b>" . $tags['citation_section'] . "</b>"; }
-    
+
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
