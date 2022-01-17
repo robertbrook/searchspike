@@ -56,7 +56,7 @@ preg_match("/https:\/\/petition.parliament.uk\/petitions\/\d*$/", $value->url, $
 if (count($petition_match) == 1) {
     $petition_json = file_get_contents($value->url . ".json");
     $petition_obj = json_decode($petition_json);
-    print_r($petition_obj);
+    print_r($petition_obj->data->attributes);
 }
     
 $tags = get_meta_tags($value->url);
