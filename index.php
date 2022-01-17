@@ -46,6 +46,8 @@ $obj = json_decode($json);
 
     
     // str_ends_with
+    // parse url
+    // headers
     
 foreach ($obj->webPages->value as $value) {
     
