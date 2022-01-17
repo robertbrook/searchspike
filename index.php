@@ -8,6 +8,7 @@
         main {padding:2rem 0;}
         article {display:block;padding:0.75rem 0;}
         span.displayUrl {display:block;color:green;}
+        span.host {display:block;color:gray;}
         span.info {display:block;color:gray;}
         span.tag {padding-right:1rem;}
     </style>
@@ -52,7 +53,7 @@ foreach ($obj->webPages->value as $value) {
     
 $tags = get_meta_tags($value->url);
 
-// print_r(parse_url($value->url, PHP_URL_HOST));
+$article_host = parse_url($value->url, PHP_URL_HOST);
 
 $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
@@ -85,6 +86,7 @@ if (
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
+<span class="host">$article_host</span>
 <span class="displayUrl">$value->displayUrl</span>
 $article_snippet
 <span class="info">
