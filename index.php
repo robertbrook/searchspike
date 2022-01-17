@@ -72,7 +72,7 @@ $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:description']; }
 if (isset($petition_attrs->background)) { $article_snippet = "<span class='inline-info'>Background</span> " . $petition_attrs->background "<br>"; }
-if (isset($petition_attrs->additional_details)) { $article_snippet .= "<span class='inline-info'>Additional details</span> " . $petition_attrs->additional_details "<br>"; }
+if (isset($petition_attrs->additional_details)) { $article_snippet .= "<span class='inline-info'>Additional details</span> " . $petition_attrs->additional_details . "<br>"; }
 
 $article_title = "";
 $article_title = $value->name;
