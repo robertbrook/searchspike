@@ -47,13 +47,15 @@ $obj = json_decode($json);
     
     // str_ends_with
     // parse url
-    // headers
+
     
 foreach ($obj->webPages->value as $value) {
     
 $tags = get_meta_tags($value->url);
+
+print_r(get_headers($value->url, true));
     
-// print_r($tags);
+
 
 $article_snippet = $value->snippet;
 if (isset($tags['description'])) { $article_snippet = $tags['description']; }
