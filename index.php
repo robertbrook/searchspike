@@ -70,6 +70,7 @@ if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 if (isset($tags['twitter:description'])) { $article_snippet = $tags['twitter:description']; }
 if (isset($petition_attrs->background)) { $article_snippet = 'Background: ' . $petition_attrs->background; }
 
+$article_title = "";
 $article_title = $value->name;
 if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; }
 if (isset($tags['twitter:title'])) { $article_title = $tags['twitter:title']; }
