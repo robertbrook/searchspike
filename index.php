@@ -51,8 +51,7 @@ $obj = json_decode($json);
     
 foreach ($obj->webPages->value as $value) {
 
-$pattern = "https://petition.parliament.uk/petitions/(\d*)";
-preg_match($pattern, $value->url, $m); 
+preg_match('/https:\/\/petition.parliament.uk\/petitions\/(\d*)/', $value->url, $m);
 
 print_r($m);
     
