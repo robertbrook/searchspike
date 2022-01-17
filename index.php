@@ -70,6 +70,10 @@ $article_host = parse_url($value->url, PHP_URL_HOST);
 $article_host_badge = "";
 $article_host_badge = match ($article_host) {
     'petition.parliament.uk' => "Petitions",
+    'edm.parliament.uk' => "Early day motions",
+    'publications.parliament.uk' => "Publications",
+    'hansard.parliament.uk' => "Hansard",
+    'www.parliament.uk' => "Parliament",
     default => $article_host,
 };
 
@@ -114,7 +118,7 @@ if (
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
-<span class="host">$article_host $article_host_badge</span>
+<span class="host">$article_host_badge</span>
 <span class="displayUrl">$value->displayUrl</span>
 $article_snippet
 <span class="info">
