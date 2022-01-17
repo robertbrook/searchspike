@@ -59,7 +59,9 @@ if (isset($tags['description'])) { $article_snippet = $tags['description']; }
 $article_title = $value->name;
 if (isset($tags['citation_title'])) { $article_title = $tags['citation_title']; }
 
-if (isset($tags['citation_author'])) { $article_author = "Author <strong>" . $tags['citation_author'] . "</strong>"; }
+if (
+    isset($tags['citation_author']) === true && $tags['citation_author'] === ''
+    ) { $article_author = "Author <strong>" . $tags['citation_author'] . "</strong>"; }
 
 echo <<<ARTICLE
 <article id="$value->id">
