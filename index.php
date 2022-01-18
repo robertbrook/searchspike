@@ -55,10 +55,9 @@ foreach ($obj->webPages->value as $value) {
 
 preg_match("/https:\/\/petition.parliament.uk\/petitions\/\d*$/", $value->url, $petition_match);
 
-
+$petition_attrs = new stdClass();
 
 if (count($petition_match) == 1) {
-    $petition_attrs = new stdClass();
     $petition_json = file_get_contents($value->url . ".json");
     $petition_obj = json_decode($petition_json);
     $petition_attrs = $petition_obj->data->attributes;
