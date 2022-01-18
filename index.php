@@ -66,11 +66,17 @@ if (count($petition_match) == 1) {
     if (
         isset($petition_attrs->state) === true && $petition_attrs->state !== ''
         ) { $petition_state = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
+    
     $petition_signature_count = "";
     if (
         isset($petition_attrs->signature_count) === true && $petition_attrs->signature_count !== ''
         ) { $petition_signature_count = "<span class='tag'><b>" . $petition_attrs->signature_count . "</b> signatures</span>"; }
-        
+    
+    $petition_creator_name = "";
+    if (
+        isset($petition_attrs->creator_name) === true && $petition_attrs->creator_name !== ''
+        ) { $petition_creator_name = "<span class='tag'>Creator <b>" . $petition_attrs->creator_name . "</b></span>"; }
+                
 }
     
 $tags = get_meta_tags($value->url);
