@@ -70,6 +70,7 @@ $article_host = parse_url($value->url, PHP_URL_HOST);
 $article_host_badge = "";
 $article_host_badge = match ($article_host) {
     'petition.parliament.uk' => "Petitions",
+    'committees.parliament.uk' => "Committees",
     'questions-statements.parliament.uk' => "Written Questions, Answers and Statements",
     'bills.parliament.uk' => "Bills",
     'edm.parliament.uk' => "Early Day Motions",
