@@ -7,7 +7,7 @@
         body {font-family:sans-serif;max-width:38rem;margin:1rem auto;line-height:1.4;padding:1rem;}
         main {padding:2rem 0;}
         article {display:block;padding:0.75rem 0;}
-        span.host {display:block;color:green;}
+        span.host {color:green;}
         span.displayUrl {display:block;color:gray;}
         span.info {display:block;color:gray;}
         span.inline-info {color:gray;}
@@ -129,8 +129,8 @@ if (
 echo <<<ARTICLE
 <article id="$value->id">
 <big><a href="$value->url">$article_title</a></big>
-<span class="host">$article_host_badge</span>
 <span class="displayUrl">$value->displayUrl</span>
+<span class="host">$article_host_badge</span>
 $article_snippet
 <span class="info">
     $article_author
