@@ -56,23 +56,26 @@ foreach ($obj->webPages->value as $value) {
 preg_match("/https:\/\/petition.parliament.uk\/petitions\/\d*$/", $value->url, $petition_match);
 
 $petition_attrs = new stdClass();
+$petition_state = "";
+$petition_signature_count = "";
+$petition_creator_name = "";
 
 if (count($petition_match) == 1) {
     $petition_json = file_get_contents($value->url . ".json");
     $petition_obj = json_decode($petition_json);
     $petition_attrs = $petition_obj->data->attributes;
     // print_r($petition_attrs);
-    $petition_state = "";
+    
     if (
         isset($petition_attrs->state) === true && $petition_attrs->state !== ''
         ) { $petition_state = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
     
-    $petition_signature_count = "";
+    
     if (
         isset($petition_attrs->signature_count) === true && $petition_attrs->signature_count !== ''
         ) { $petition_signature_count = "<span class='tag'><b>" . $petition_attrs->signature_count . "</b> signatures</span>"; }
     
-    $petition_creator_name = "";
+    
     if (
         isset($petition_attrs->creator_name) === true && $petition_attrs->creator_name !== ''
         ) { $petition_creator_name = "<span class='tag'>Creator <b>" . $petition_attrs->creator_name . "</b></span>"; }
