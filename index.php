@@ -60,7 +60,7 @@ if (count($petition_match) == 1) {
     $petition_json = file_get_contents($value->url . ".json");
     $petition_obj = json_decode($petition_json);
     $petition_attrs = $petition_obj->data->attributes;
-    // print_r($petition_attrs);
+    print_r($petition_attrs);
 }
     
 $tags = get_meta_tags($value->url);
@@ -82,8 +82,6 @@ $article_host_badge = match ($article_host) {
     'researchbriefings.files.parliament.uk' => "Research Briefings",
     default => $article_host,
 };
-
-// 
 
 $article_snippet = "";
 $article_snippet = $value->snippet;
