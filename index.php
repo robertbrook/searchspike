@@ -11,7 +11,7 @@
         span.displayUrl {display:block;color:gray;}
         span.info {display:block;color:gray;}
         span.inline-info {color:gray;}
-        span.tag {padding-right:1rem;}
+        span.tag {padding-right:0.75rem;}
         a {text-decoration:none;}
     </style>
  </head>
