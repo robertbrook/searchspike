@@ -72,7 +72,7 @@ if (count($petition_match) == 1) {
         ) { $petition_state = "<span class='tag'>State <b>" . $petition_attrs->state . "</b></span>"; }
     
     if (
-        isset($petition_attrs->topics) === true // && count($petition_attrs->topics > 0)
+        isset($petition_attrs->topics) === true && count($petition_attrs->topics) > 0
         ) { $petition_topics = "<span class='tag'>Topics <b>" . implode(", ", $petition_attrs->topics) . "</b></span>"; }
             
     if (
