@@ -7,7 +7,7 @@
         body {font-family:sans-serif;max-width:38rem;margin:1rem auto;line-height:1.4;padding:1rem;}
         main {padding:2rem 0;}
         article {display:block;padding:0.75rem 0;}
-        span.host {color:green;}
+        span.host {color:green;font-weight:bold;}
         span.displayUrl {display:block;color:gray;}
         span.info {display:block;color:gray;}
         span.inline-info {color:gray;}
