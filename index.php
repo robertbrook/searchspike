@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {font-family:sans-serif;max-width:32rem;}
+        body {font-family:sans-serif;max-width:32rem;margin:1rem auto;line-height:1.4;}
         main {padding:2rem 0;}
         article {display:block;padding:0.75rem 0;}
         span.host {display:block;color:green;}
@@ -12,6 +12,7 @@
         span.info {display:block;color:gray;}
         span.inline-info {color:gray;}
         span.tag {padding-right:1rem;}
+        a {text-decoration:none;}
     </style>
  </head>
  <body>
