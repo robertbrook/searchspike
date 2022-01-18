@@ -81,6 +81,7 @@ $article_host_badge = match ($article_host) {
     'www.parliament.uk' => "Parliament",
     'members.parliament.uk' => "Members",
     'researchbriefings.files.parliament.uk' => "Research Briefings",
+    'depositedpapers.parliament.uk' => "Deposited Papers",
     default => $article_host,
 };
 
