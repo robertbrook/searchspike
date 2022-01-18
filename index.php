@@ -59,6 +59,7 @@ $petition_attrs = new stdClass();
 $petition_state = "";
 $petition_signature_count = "";
 $petition_creator_name = "";
+$petition_topics = "";
 
 if (count($petition_match) == 1) {
     $petition_json = file_get_contents($value->url . ".json");
@@ -70,7 +71,11 @@ if (count($petition_match) == 1) {
         isset($petition_attrs->state) === true && $petition_attrs->state !== ''
         ) { $petition_state = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
     
+    if (
+        isset($petition_attrs->topics) === true && $petition_attrs->topics !== ''
+        ) { $petition_topics = "<span class='tag'>Petition topics <b>" . $petition_attrs->topics . "</b></span>"; }
     
+            
     if (
         isset($petition_attrs->signature_count) === true && $petition_attrs->signature_count !== ''
         ) { $petition_signature_count = "<span class='tag'><b>" . $petition_attrs->signature_count . "</b> signatures</span>"; }
@@ -151,6 +156,7 @@ $article_snippet
     $article_section
     $petition_state
     $petition_signature_count
+    $petition_topics
 </span>
 </article>
 ARTICLE;
