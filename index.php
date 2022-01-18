@@ -7,8 +7,8 @@
     <style>
         main {padding:2rem 0;}
         article {display:block;padding:0.75rem 0;}
-        span.displayUrl {display:block;color:green;}
-        span.host {display:block;color:gray;}
+        span.host {display:block;color:green;}
+        span.displayUrl {display:block;color:gray;}
         span.info {display:block;color:gray;}
         span.inline-info {color:gray;}
         span.tag {padding-right:1rem;}
@@ -70,6 +70,7 @@ $article_host = parse_url($value->url, PHP_URL_HOST);
 $article_host_badge = "";
 $article_host_badge = match ($article_host) {
     'petition.parliament.uk' => "Petitions",
+    'bills.parliament.uk' => "Bills",
     'edm.parliament.uk' => "Early Day Motions",
     'commonslibrary.parliament.uk' => "House of Commons Library",
     'lordslibrary.parliament.uk' => "House of Lords Library",
