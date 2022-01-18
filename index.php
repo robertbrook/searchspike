@@ -69,11 +69,11 @@ if (count($petition_match) == 1) {
     
     if (
         isset($petition_attrs->state) === true && $petition_attrs->state !== ''
-        ) { $petition_state = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
+        ) { $petition_state = "<span class='tag'>State <b>" . $petition_attrs->state . "</b></span>"; }
     
     if (
         isset($petition_attrs->topics) === true && $petition_attrs->topics !== ''
-        ) { $petition_topics = "<span class='tag'>Petition topics <b>" . implode(", ", $petition_attrs->topics) . "</b></span>"; }
+        ) { $petition_topics = "<span class='tag'>Topics <b>" . implode(", ", $petition_attrs->topics) . "</b></span>"; }
     // implode(",", $array)
             
     if (
