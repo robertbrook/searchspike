@@ -119,7 +119,7 @@ if (
     isset($tags['twitter:site']) === true && $tags['twitter:site'] !== ''
     ) { $twitter_site = "<span class='tag'>Twitter <b>" . $tags['twitter:site'] . "</b></span>"; }
 
-$petition_state = "";
+$petition_state = "State default";
 if (
     isset($petition_attrs->state) === true && $petition_attrs->state !== ''
     ) { $twitter_site = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
