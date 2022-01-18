@@ -66,7 +66,7 @@ if (count($petition_match) == 1) {
     $petition_state = "";
     if (
         isset($petition_attrs->state) === true && $petition_attrs->state !== ''
-        ) { $twitter_site = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
+        ) { $petition_state = "<span class='tag'>Petition state <b>" . $petition_attrs->state . "</b></span>"; }
     
 }
     
