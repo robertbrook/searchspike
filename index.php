@@ -73,8 +73,8 @@ if (count($petition_match) == 1) {
     
     if (
         isset($petition_attrs->topics) === true && $petition_attrs->topics !== ''
-        ) { $petition_topics = "<span class='tag'>Petition topics <b>" . $petition_attrs->topics . "</b></span>"; }
-    
+        ) { $petition_topics = "<span class='tag'>Petition topics <b>" . implode(", ", $petition_attrs->topics) . "</b></span>"; }
+    // implode(",", $array)
             
     if (
         isset($petition_attrs->signature_count) === true && $petition_attrs->signature_count !== ''
