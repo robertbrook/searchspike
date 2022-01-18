@@ -50,6 +50,7 @@ $obj = json_decode($json);
 
     
     // str_ends_with
+    // petition depts
     
 foreach ($obj->webPages->value as $value) {
 
