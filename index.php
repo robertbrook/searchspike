@@ -69,7 +69,7 @@ if (count($petition_match) == 1) {
     $petition_signature_count = "";
     if (
         isset($petition_attrs->signature_count) === true && $petition_attrs->signature_count !== ''
-        ) { $petition_signature_count = "<span class='tag'><b>" . $petition_attrs->state . "</b> signatures</span>"; }
+        ) { $petition_signature_count = "<span class='tag'><b>" . $petition_attrs->signature_count . "</b> signatures</span>"; }
         
 }
     
