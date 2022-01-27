@@ -150,7 +150,7 @@ echo <<<ARTICLE
 </article>
 ARTICLE;
     
-echo var_export($tags);
+echo var_export($tags, true);
     
 }
 
