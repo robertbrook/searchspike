@@ -150,7 +150,7 @@ echo <<<ARTICLE
 ARTICLE;
     
 foreach ($tags as $key => $value) {
-    echo "<tr><td>$key</td><td>$value</td></tr>";
+    echo "<tr><td style='width:20%;'>$key</td><td style='width:80%;'>$value</td></tr>";
 }
     
     echo "</table>";
