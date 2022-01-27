@@ -57,26 +57,21 @@ foreach ($obj->webPages->value as $value) {
 
 $doc = new DOMDocument();
 $doc->loadHTMLfile($value->url);
+$title = $doc->getElementsByTagName( "title" );
 
-$nodes = $doc->getElementsByTagName( "meta" );
+$metas = $doc->getElementsByTagName( "meta" );
 
-foreach($nodes as $node) {
-    echo "<pre>" . $node->getAttribute('name') . "</pre>";
-    echo "<pre>" . $node->getAttribute('content') . "</pre>";
-    echo "<pre>" . $node->getAttribute('property') . "</pre>";
+    echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
+
+    echo $title;
+    
+foreach($metas as $meta) {
+    echo "<pre>" . $meta->getAttribute('name') . "</pre>";
+    echo "<pre>" . $meta->getAttribute('content') . "</pre>";
+    echo "<pre>" . $meta->getAttribute('property') . "</pre>";
 }
     
-echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
 
-    if ($tags !== false) {
-            echo "<table>";
-
-foreach ($tags as $key => $value) {
-    echo "<tr><td style='width:20%;'>$key</td><td style='width:80%;'>$value</td></tr>";
-}
-            echo "</table>";
-
-    }
     
     
 }
