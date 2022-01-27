@@ -145,15 +145,16 @@ if (
 
 
 echo <<<ARTICLE
+<p>
 <table id="$value->id">
-<tr><td>URL</td><td>$value->url</td></tr>
+<tr><td style='width:20%;'>URL</td><td style='width:80%;'>$value->url</td></tr>
 ARTICLE;
-    
+    if ($tags !== false) {
 foreach ($tags as $key => $value) {
     echo "<tr><td style='width:20%;'>$key</td><td style='width:80%;'>$value</td></tr>";
 }
-    
-    echo "</table>";
+    }
+    echo "</table></p>";
     
     
 }
