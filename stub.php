@@ -146,18 +146,7 @@ if (
 
 echo <<<ARTICLE
 <article id="$value->id">
-<big><a href="$value->url">$article_title</a></big>
-<span class="displayUrl">$value->displayUrl</span>
-<span class="host">$article_host_badge</span>
-$article_snippet
-<span class="info">
-    $article_author
-    $article_topic 
-    $article_section
-    $petition_state
-    $petition_signature_count
-    $petition_topics
-</span>
+<big>$value->url</big>
 </article>
 ARTICLE;
     
