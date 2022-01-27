@@ -150,7 +150,10 @@ echo <<<ARTICLE
 </article>
 ARTICLE;
     
-echo "<pre>" . var_export($tags, true) . "</pre>";
+foreach ($tags as $key => $value) {
+    echo "<p>$key = $value</p>";
+}
+    
     
 }
 
