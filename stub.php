@@ -144,17 +144,17 @@ if (
     ) { $twitter_site = "<span class='tag'>Twitter <b>" . $tags['twitter:site'] . "</b></span>"; }
 
 
-echo <<<ARTICLE
-<p>
-<table id="$value->id">
-<caption>$value->url</caption>
-ARTICLE;
+echo "<h3>$value->url</h3>";
+
     if ($tags !== false) {
+            echo "<table>";
+
 foreach ($tags as $key => $value) {
     echo "<tr><td style='width:20%;'>$key</td><td style='width:80%;'>$value</td></tr>";
 }
+            echo "</table>";
+
     }
-    echo "</table></p>";
     
     
 }
