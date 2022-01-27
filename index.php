@@ -18,7 +18,7 @@
  <body>
   <header>
       <form action="index.php" method="GET">
- <input type="search" name="q" id="search" value="<?php echo $q; ?>"> <input type="submit" value="Search">
+ <input type="search" name="q" id="search" results=7 value="<?php echo $q; ?>"> <input type="submit" value="Search">
 </form>
 </header>
   <main>
