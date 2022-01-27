@@ -147,7 +147,7 @@ if (
 echo <<<ARTICLE
 <p>
 <table id="$value->id">
-<tr><td style='width:20%;'>URL</td><td style='width:80%;'>$value->url</td></tr>
+<caption>$value->url</caption>
 ARTICLE;
     if ($tags !== false) {
 foreach ($tags as $key => $value) {
