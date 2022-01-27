@@ -63,7 +63,7 @@ $metas = $doc->getElementsByTagName( "meta" );
 
     echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
 
-    echo "<h1>$title</h1>";
+    // echo "<h1>$title</h1>";
     
 foreach($metas as $meta) {
         echo "<pre>" . $meta . "</pre>";
