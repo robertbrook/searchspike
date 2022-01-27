@@ -57,17 +57,15 @@ foreach ($obj->webPages->value as $value) {
 
 $doc = new DOMDocument();
 $doc->loadHTMLfile($value->url);
-// $title = $doc->getElementsByTagName( "title" );
+$title = $doc->getElementsByTagName( "title" );
 
 $metas = $doc->getElementsByTagName( "meta" );
 
     echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
 
-    // echo "<h1>$title</h1>";
+echo "<h1>$title</h1>";
     
 foreach($metas as $meta) {
-        echo "<pre>" . $meta . "</pre>";
-
     echo "<pre>" . $meta->getAttribute('name') . "</pre>";
     echo "<pre>" . $meta->getAttribute('content') . "</pre>";
     echo "<pre>" . $meta->getAttribute('property') . "</pre>";
