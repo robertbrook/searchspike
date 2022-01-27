@@ -152,7 +152,9 @@ $xpath = new DOMXPath($doc);
 $nodes = $xpath->query('//head/meta');
 
 foreach($nodes as $node) {
-    echo "<pre>" . var_export($node->nodeValue, true) . "</pre>";
+    echo "<pre>" . $node->getAttribute('name') . "</pre>";
+    echo "<pre>" . $node->getAttribute('content') . "</pre>";
+    echo "<pre>" . $node->getAttribute('property') . "</pre>";
 }
     
 echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
