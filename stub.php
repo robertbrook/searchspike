@@ -58,9 +58,7 @@ foreach ($obj->webPages->value as $value) {
 $doc = new DOMDocument();
 $doc->loadHTMLfile($value->url);
 
-$xpath = new DOMXPath($doc);
-
-$nodes = $xpath->query('//meta');
+$nodes = $doc->getElementsByTagName( "meta" );
 
 foreach($nodes as $node) {
     echo "<pre>" . $node->getAttribute('name') . "</pre>";
