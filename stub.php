@@ -144,7 +144,7 @@ if (
     ) { $twitter_site = "<span class='tag'>Twitter <b>" . $tags['twitter:site'] . "</b></span>"; }
 
 
-echo "<p><strong>$value->url</strong></p>";
+echo "<hr><p>$value->url</p>";
 
     if ($tags !== false) {
             echo "<table>";
