@@ -15,9 +15,9 @@
         a {text-decoration:none;}
         
         input[type=search] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  width: 60%;
+  padding: 0.5rem;
+  margin: 0.5rem;
   box-sizing: border-box;
 }
     </style>
