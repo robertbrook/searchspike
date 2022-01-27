@@ -60,7 +60,7 @@ $doc->loadHTMLfile($value->url);
 
 $xpath = new DOMXPath($doc);
 
-$nodes = $xpath->query('//head/meta');
+$nodes = $xpath->query('//meta');
 
 foreach($nodes as $node) {
     echo "<pre>" . $node->getAttribute('name') . "</pre>";
