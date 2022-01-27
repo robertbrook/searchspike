@@ -57,7 +57,7 @@ foreach ($obj->webPages->value as $value) {
 
 $doc = new DOMDocument();
 $doc->loadHTMLfile($value->url);
-$title = $doc->getElementsByTagName( "title" );
+// $title = $doc->getElementsByTagName( "title" );
 
 $metas = $doc->getElementsByTagName( "meta" );
 
