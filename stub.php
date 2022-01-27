@@ -145,14 +145,15 @@ if (
 
 
 echo <<<ARTICLE
-<article id="$value->id">
-<big>$value->url</big>
-</article>
+<table id="$value->id">
+<tr><td>URL</td><td>$value->url</td></tr>
 ARTICLE;
     
 foreach ($tags as $key => $value) {
-    echo "<p>$key = $value</p>";
+    echo "<tr><td>$key</td><td>$value</td></tr>";
 }
+    
+    echo "</table>";
     
     
 }
