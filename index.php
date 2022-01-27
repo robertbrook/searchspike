@@ -13,6 +13,13 @@
         span.inline-info {color:gray;}
         span.tag {padding-right:0.5rem;}
         a {text-decoration:none;}
+        
+        input[type=search] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
     </style>
  </head>
  <body>
