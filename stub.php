@@ -144,6 +144,17 @@ if (
     ) { $twitter_site = "<span class='tag'>Twitter <b>" . $tags['twitter:site'] . "</b></span>"; }
 
 
+$doc = new DOMDocument();
+$doc->loadHTMLfile($value->url);
+
+$xpath = new DOMXPath($doc);
+
+$nodes = $xpath->query('//head/meta');
+
+foreach($nodes as $node) {
+    echo "<pre>" . var_export($node, true) . "</pre>";
+}
+    
 echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
 
     if ($tags !== false) {
