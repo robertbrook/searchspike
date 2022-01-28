@@ -1,4 +1,4 @@
-<?php $q = htmlspecialchars($_GET['q']); ?><!DOCTYPE html>
+<?php $q = htmlspecialchars($_GET['q']);?><!DOCTYPE html>
 <html lang="en-GB">
 <head>
     <meta charset="utf-8">
@@ -22,55 +22,53 @@
 </form>
 </header>
   <main>
-<?php 
+<?php
 
 $apikey = getenv("APIKEY");
 
 $q = htmlspecialchars($_GET['q']);
 
-
 if (empty($q)) {
     echo '<!-- no q -->';
 } else {
- 
 
-$opts = [
-    "http" => [
-        "method" => "GET",
-        "header" => "Ocp-Apim-Subscription-Key: ${apikey}\r\n"
-    ]
-];
+    $opts = [
+        "http" => [
+            "method" => "GET",
+            "header" => "Ocp-Apim-Subscription-Key: ${apikey}\r\n",
+        ],
+    ];
 
-$context = stream_context_create($opts);
-    
-$q = rawurlencode($q);
+    $context = stream_context_create($opts);
 
-$json = file_get_contents("https://api.cognitive.microsoft.com/bing/v7.0/search?q=${q}+site:parliament.uk&count=50", false, $context);
-$obj = json_decode($json);
+    $q = rawurlencode($q);
 
-foreach ($obj->webPages->value as $value) {
+    $json = file_get_contents("https://api.cognitive.microsoft.com/bing/v7.0/search?q=${q}+site:parliament.uk&count=50", false, $context);
+    $obj = json_decode($json);
 
-$doc = new DOMDocument();
-$doc->loadHTMLfile($value->url);
+    foreach ($obj->webPages->value as $value) {
+
+        $doc = new DOMDocument();
+        $doc->loadHTMLfile($value->url);
 // $title = $doc->getElementsByTagName( "title" );
 
-$metas = $doc->getElementsByTagName( "meta" );
+        $metas = $doc->getElementsByTagName("meta");
 
-echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
+        echo "<br><br><p><a href='$value->url'>$value->url</a></p>";
 
 // echo "<h1>$title</h1>";
-    
-foreach($metas as $meta) {
-    echo "<pre>" . $meta->getAttribute('name') . "</pre>";
-    echo "<pre>" . $meta->getAttribute('content') . "</pre>";
-    echo "<pre>" . $meta->getAttribute('property') . "</pre>";
-}
-      
-}
+
+        foreach ($metas as $meta) {
+            echo "<pre>" . $meta->getAttribute('name') . "</pre>";
+            echo "<pre>" . $meta->getAttribute('content') . "</pre>";
+            echo "<pre>" . $meta->getAttribute('property') . "</pre>";
+        }
+
+    }
 
 }
-   
-   ?>
+
+?>
   </main>
   <footer></footer>
  </body>
